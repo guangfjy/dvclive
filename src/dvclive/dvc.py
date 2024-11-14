@@ -93,7 +93,7 @@ def update_dvcyaml(live, updates):  # noqa: C901
     from dvc.utils.serialize import modify_yaml
 
     dvcyaml_dir = os.path.abspath(os.path.dirname(live.dvc_file))
-    dvclive_dir = os.path.relpath(live.dir, dvcyaml_dir) + "/"
+    dvclive_dir = rel_path(live.dir, dvcyaml_dir) + "/"
 
     def _drop_stale_dvclive_entries(entries):
         non_dvclive = []
